@@ -1,0 +1,53 @@
+/* About.css */
+
+.about.container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    background: linear-gradient(90deg,rgb(159, 160, 90),rgb(7,77, 121),rgb(140, 192, 140));
+  }
+  
+  .about-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+
+  }
+  
+  .about-header h1 {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin: 0;
+  }
+  
+  .back-button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    font-size: 0.95rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .back-button:hover {
+    background-color: #2980b9;
+  }
+  
+  .about-section {
+    line-height: 1.7;
+    font-size: 1.1rem;
+    /* background-color: #f9f9f9; */
+    background-color: #b7b3b3;
+    padding: 20px;
+    border-left: 4px solid #3498db;
+    border-radius: 8px;
+  }
+  

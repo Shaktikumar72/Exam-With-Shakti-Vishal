@@ -1,0 +1,392 @@
+body {
+  background: linear-gradient(90deg, #bde6f2, #cabfd2);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-header h1 {
+  font-size: 28px;
+  color: white;
+  margin: 0;
+}
+
+.back-button, .start-exam-button, .view-results-button, .delete-exam-button, .delete-result-button, .view-report-button, .reexam-button, .dashboard-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.3s;
+}
+
+.back-button {
+  background: #a0aec0;
+  color: white;
+}
+
+.back-button:hover {
+  background: #718096;
+  transform: scale(1.05);
+}
+
+.admin-link, .view-detailed-button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  background: #4a90e2;
+  text-decoration: none;
+  border-radius: 8px;
+  margin: 10px 0;
+  transition: transform 0.2s, background 0.3s;
+}
+
+.admin-link:hover, .view-detailed-button:hover {
+  background: #357abd;
+  transform: scale(1.05);
+}
+
+.exams-section, .results-section, .top-students-section {
+  margin-bottom: 40px;
+}
+
+.exams-section h2, .results-section h2, .top-students-section h2 {
+  font-size: 24px;
+  color: #2d3748;
+  margin-bottom: 20px;
+}
+
+.exams-grid, .results-list, .top-students-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.exam-card, .result-item, .top-student-item {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.exam-card:hover, .result-item:hover, .top-student-item:hover {
+  transform: translateY(-5px);
+}
+
+.exam-card h3, .result-item h3, .top-student-item h3 {
+  font-size: 20px;
+  color: #2d3748;
+  margin: 0 0 10px;
+}
+
+.exam-card p, .result-item p, .top-student-item p {
+  font-size: 16px;
+  color: #718096;
+  margin: 0 0 10px;
+}
+
+.result-item small {
+  font-size: 14px;
+  color: #a0aec0;
+}
+
+.start-exam-button, .view-results-button, .view-report-button, .reexam-button {
+  background: #48bb78;
+  color: white;
+  margin-right: 10px;
+}
+
+.start-exam-button:hover, .view-results-button:hover, .view-report-button:hover, .reexam-button:hover {
+  background: #38a169;
+  transform: scale(1.05);
+}
+
+.delete-exam-button, .delete-result-button {
+  background: #e53e3e;
+  color: white;
+}
+
+.delete-exam-button:hover, .delete-result-button:hover {
+  background: #c53030;
+  transform: scale(1.05);
+}
+
+.result-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.no-data {
+  font-size: 16px;
+  color: #718096;
+  text-align: center;
+}
+
+.confirm-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-in;
+}
+
+.confirm-popup-content {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+  animation: slideUp 0.3s ease-in;
+}
+
+.confirm-popup-content h2 {
+  font-size: 24px;
+  color: #2d3748;
+  margin: 0 0 15px;
+}
+
+.confirm-popup-content p {
+  font-size: 16px;
+  color: #718096;
+  margin: 0 0 20px;
+}
+
+.confirm-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.confirm-button, .cancel-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.3s;
+}
+
+.confirm-button {
+  background: #48bb78;
+}
+
+.confirm-button:hover {
+  background: #38a169;
+  transform: scale(1.05);
+}
+
+.cancel-button {
+  background: #e53e3e;
+}
+
+.cancel-button:hover {
+  background: #c53030;
+  transform: scale(1.05);
+}
+
+.error-message {
+  font-size: 18px;
+  color: #e53e3e;
+  text-align: center;
+  margin-top: 20px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* New Loader Styles */
+.loader-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(90deg, #8593d2, #ad8fcb);
+}
+
+.loader {
+  border: 6px solid #e2e8f0;
+  border-top: 6px solid #4a90e2;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+.loader-text {
+  display: block;
+  color: #556d90;
+  font-size: 18px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Navigation Bar (Desktop and Mobile Container) */
+.nav-bar {
+  background: #5e2d79;
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+}
+
+/* Desktop Navigation Links */
+.nav-links {
+  display: none; /* Hidden by default, shown on desktop */
+  gap: 20px;
+}
+
+.nav-link {
+  color: #d1c4e9;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-link:hover {
+  color: #ffffff;
+}
+
+/* Mobile Toggle Button */
+.menu-button {
+  background: none;
+  color: #d1c4e9;
+  border: none;
+  font-size: 24px;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.menu-button:hover {
+  background: #4a2361;
+}
+
+/* Sidebar (Mobile) */
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  background-color: #f8f9fa;
+  position: fixed;
+  top: 0;
+  left: -250px;
+  transition: left 0.3s ease-in-out;
+  z-index: 1000;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+}
+
+.sidebar.open {
+  left: 0;
+}
+
+.logo {
+  padding: 20px;
+  font-size: 24px;
+  text-align: center;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  gap: 10px;
+}
+
+.search-container {
+  margin-bottom: 20px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none; /* Ensure links are hidden on mobile */
+  }
+
+  .menu-button {
+    display: block; /* Show toggle button on mobile */
+  }
+
+  .nav-bar {
+    justify-content: flex-end; /* Button on the right */
+  }
+}
+
+@media (min-width: 769px) {
+  .sidebar {
+    display: none; /* Hide sidebar on desktop */
+  }
+
+  .menu-button {
+    display: none; /* Hide toggle button on desktop */
+  }
+
+  .nav-links {
+    display: flex; /* Show navigation links on desktop */
+  }
+
+  .nav-bar {
+    justify-content: space-between; /* Spread links and space on desktop */
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-link {
+    font-size: 12px;
+  }
+
+  .menu-button {
+    font-size: 20px;
+    padding: 8px 12px;
+  }
+
+  .sidebar-nav .nav-link {
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,240 @@
+.admin-exam-results-container {
+  padding: 20px;
+  background: linear-gradient(135deg, #f7fafc, #edf2f7);
+  min-height: 100vh;
+  animation: fadeIn 0.5s ease-in;
+}
+
+.results-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  background: #ffffff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.results-header h1 {
+  font-size: clamp(20px, 5vw, 24px);
+  color: #2d3748;
+  margin: 0;
+  flex: 1;
+  text-align: center;
+}
+
+.back-button {
+  padding: 8px 16px;
+  font-size: clamp(14px, 4vw, 16px);
+  color: white;
+  background: #a0aec0;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.3s;
+}
+
+.back-button:hover {
+  background: #718096;
+  transform: scale(1.05);
+}
+
+.stats-section {
+  margin-bottom: 30px;
+}
+
+.stats-section h2 {
+  font-size: clamp(18px, 5vw, 22px);
+  color: #2d3748;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.stats-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.stats-card {
+  background: #ffffff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  animation: slideUp 0.5s ease-in;
+}
+
+.stats-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.stats-card h3 {
+  font-size: clamp(16px, 4vw, 18px);
+  color: #4a90e2;
+  margin: 0 0 8px;
+}
+
+.stats-card p {
+  font-size: clamp(14px, 3.5vw, 15px);
+  color: #718096;
+  margin: 5px 0;
+}
+
+.students-list h4 {
+  font-size: clamp(16px, 4vw, 17px);
+  color: #2d3748;
+  margin: 15px 0 10px;
+}
+
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+.result-card {
+  background: #f7fafc;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s, box-shadow 0.3s;
+  animation: slideUp 0.3s ease-in;
+}
+
+.result-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.result-card h3 {
+  font-size: clamp(15px, 3.5vw, 16px);
+  color: #4a90e2;
+  margin: 0 0 6px;
+}
+
+.result-card p {
+  font-size: clamp(13px, 3vw, 14px);
+  color: #718096;
+  margin: 4px 0;
+}
+
+.result-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.view-report-button, .re-exam-button, .delete-result-button {
+  padding: 6px 12px;
+  font-size: clamp(12px, 3vw, 13px);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.3s;
+}
+
+.view-report-button {
+  background: #4a90e2;
+}
+
+.view-report-button:hover {
+  background: #357abd;
+  transform: scale(1.05);
+}
+
+.re-exam-button {
+  background: #48bb78;
+}
+
+.re-exam-button:hover {
+  background: #38a169;
+  transform: scale(1.05);
+}
+
+.delete-result-button {
+  background: #e53e3e;
+}
+
+.delete-result-button:hover {
+  background: #c53030;
+  transform: scale(1.05);
+}
+
+.no-data {
+  font-size: clamp(14px, 3.5vw, 15px);
+  color: #718096;
+  text-align: center;
+  padding: 10px;
+}
+
+.loading-spinner {
+  font-size: clamp(18px, 5vw, 20px);
+  text-align: center;
+  animation: spin 1s linear infinite;
+}
+
+.error-message {
+  font-size: clamp(16px, 4vw, 18px);
+  color: #e53e3e;
+  text-align: center;
+  padding: 20px;
+}
+
+@media (max-width: 600px) {
+  .admin-exam-results-container {
+    padding: 10px;
+  }
+
+  .results-header {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .results-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .result-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .view-report-button, .re-exam-button, .delete-result-button {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.search-container {
+  margin-bottom: 20px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  box-sizing: border-box;
+}

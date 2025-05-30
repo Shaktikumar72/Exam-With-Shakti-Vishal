@@ -1,0 +1,217 @@
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #74ebd5, #acb6e5);
+  padding: 20px;
+}
+
+.auth-card {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  animation: slideUp 0.5s ease-in-out;
+}
+
+.auth-card h2 {
+  font-size: 28px;
+  color: #2d3748;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.form-group label {
+  font-size: 16px;
+  color: #4a5568;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+  border-color: #4a90e2;
+}
+
+.auth-button {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  color: white;
+  background: #4a90e2;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.3s;
+}
+
+.auth-button:hover {
+  background: #357abd;
+  transform: scale(1.02);
+}
+
+.google-button {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  color: white;
+  background: #db4437;
+  border: none;
+  border-radius: 8px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.3s;
+}
+
+.google-button:hover {
+  background: #c1352b;
+  transform: scale(1.02);
+}
+
+.phone-button {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  color: white;
+  background: #f6a623;
+  border: none;
+  border-radius: 8px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.3s;
+}
+
+.phone-button:hover {
+  background: #e69500;
+  transform: scale(1.02);
+}
+
+.error {
+  color: #e53e3e;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.success {
+  color: #38a169;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.auth-link {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #718096;
+}
+
+.auth-link a, .link-button {
+  color: #4a90e2;
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  font: inherit;
+}
+
+.auth-link a:hover, .link-button:hover {
+  text-decoration: underline;
+}
+
+.confirm-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-in;
+}
+
+.confirm-popup-content {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+  animation: slideUp 0.3s ease-in;
+}
+
+.confirm-popup-content h2 {
+  font-size: 24px;
+  color: #2d3748;
+  margin: 0 0 15px;
+}
+
+.confirm-popup-content p {
+  font-size: 16px;
+  color: #718096;
+  margin: 0 0 20px;
+}
+
+.confirm-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.confirm-button, .cancel-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.3s;
+}
+
+.confirm-button {
+  background: #48bb78;
+}
+
+.confirm-button:hover {
+  background: #38a169;
+  transform: scale(1.05);
+}
+
+.cancel-button {
+  background: #e53e3e;
+}
+
+.cancel-button:hover {
+  background: #c53030;
+  transform: scale(1.05);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
